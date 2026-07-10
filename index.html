@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shohruh Abdullayev | Portfolio</title>
-    <meta name="description" content="Professional portfolio of Shohruh Abdullayev - Software Developer, Frontend Developer, and Graphic Designer.">
+    <title>Окихо | Портфолио Разработчика</title>
+    <meta name="description" content="Портфолио Окихо — Software Developer, программист и специалист по реверс-инженерингу.">
+    <!-- Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- ROOT VARIABLES & THEME --- */
+        /* --- ПЕРЕМЕННЫЕ И ТЕМА --- */
         :root {
             --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #020617 100%);
             --primary: #6366f1;
@@ -26,7 +28,7 @@
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* --- BASE STYLES --- */
+        /* --- БАЗОВЫЕ СТИЛИ --- */
         * {
             margin: 0;
             padding: 0;
@@ -43,7 +45,7 @@
             position: relative;
         }
 
-        /* Custom Scrollbar */
+        /* Кастомный скроллбар */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -55,7 +57,7 @@
             border-radius: 4px;
         }
 
-        /* --- PRELOADER --- */
+        /* --- ПРЕЛОАДЕР --- */
         #preloader {
             position: fixed;
             top: 0;
@@ -81,7 +83,7 @@
             to { transform: rotate(360deg); }
         }
 
-        /* --- BACKGROUND CANVAS & SHAPES --- */
+        /* --- ЧАСТИЦЫ И ЭФФЕКТЫ --- */
         #particles-js {
             position: fixed;
             top: 0;
@@ -119,7 +121,7 @@
             100% { transform: translateY(-50px) scale(1.2); }
         }
 
-        /* --- GLOBAL REUSABLE GLASS STYLE --- */
+        /* --- СТИЛЬ СТЕКЛА (GLASSMORPHISM) --- */
         .glass-card {
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
@@ -135,7 +137,7 @@
             box-shadow: 0 12px 40px 0 rgba(99, 102, 241, 0.15);
         }
 
-        /* --- SCROLL PROGRESS & BACK TO TOP --- */
+        /* --- ИНДИКАТОР СКРОЛЛА И КНОПКА ВВЕРХ --- */
         #scroll-progress {
             position: fixed;
             top: 0;
@@ -167,7 +169,7 @@
         #back-to-top.show { right: 30px; }
         #back-to-top:hover { background: var(--secondary); transform: scale(1.1); }
 
-        /* --- INTERACTIVE CURSOR EFFECT --- */
+        /* --- ИНТЕРАКТИВНЫЙ КУРСОР --- */
         #custom-cursor {
             width: 20px;
             height: 20px;
@@ -182,7 +184,7 @@
         body:hover #custom-cursor { opacity: 1; }
         .cursor-hover { width: 40px; height: 40px; background: rgba(99, 102, 241, 0.1); border-color: var(--secondary); }
 
-        /* --- NAVIGATION --- */
+        /* --- НАВИГАЦИЯ --- */
         header {
             position: fixed;
             top: 0;
@@ -238,7 +240,6 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 20px;
             height: 2px;
             background: var(--primary);
             transition: var(--transition-smooth);
@@ -254,7 +255,7 @@
             font-size: 1.5rem;
         }
 
-        /* --- SECTION LAYOUT STYLES --- */
+        /* --- СЕКЦИИ --- */
         section {
             padding: 100px 30px;
             max-width: 1200px;
@@ -274,7 +275,7 @@
             -webkit-text-fill-color: transparent;
         }
         
-        /* Scroll Reveal Utility Initial States */
+        /* Анимация проявления при скролле */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -285,7 +286,7 @@
             transform: translateY(0);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO СЕКЦИЯ --- */
         #home {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -370,10 +371,10 @@
             100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
         }
 
-        /* --- ABOUT SECTION --- */
+        /* --- ОБО МНЕ --- */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 40px;
         }
         .about-text-block {
@@ -401,7 +402,7 @@
         .about-card h3 { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 5px; }
         .about-card p { font-size: 1.1rem; font-weight: 600; color: var(--text-main); }
 
-        /* --- SKILLS SECTION --- */
+        /* --- НАВЫКИ --- */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -425,23 +426,26 @@
         }
         .skill-progress {
             height: 100%;
-            width: 0; /* Animated dynamically via JS */
+            width: 0;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             border-radius: 10px;
             transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1);
         }
 
-        /* --- PROJECTS SECTION --- */
+        /* --- ПРОЕКТЫ --- */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
+            justify-content: center;
         }
         .project-card {
             overflow: hidden;
             display: flex;
             flex-direction: column;
             height: 100%;
+            max-width: 400px;
+            margin: 0 auto;
         }
         .project-img {
             width: 100%;
@@ -453,7 +457,6 @@
             font-size: 3rem;
             color: var(--text-muted);
             transition: var(--transition-smooth);
-            position: relative;
         }
         .project-card:hover .project-img {
             transform: scale(1.05);
@@ -472,10 +475,10 @@
         .project-links { margin-top: auto; display: flex; gap: 15px; }
         .project-links .btn { padding: 8px 20px; font-size: 0.9rem; }
 
-        /* --- HOBBIES SECTION --- */
+        /* --- ХОББИ --- */
         .hobbies-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
         .hobby-card {
@@ -487,7 +490,7 @@
         .hobby-card h3 { margin-bottom: 10px; font-size: 1.2rem; }
         .hobby-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
 
-        /* --- TIMELINE COMPONENT (ACHIEVEMENTS & EDUCATION) --- */
+        /* --- ТАЙМЛАЙН (ОБРАЗОВАНИЕ И ДОСТИЖЕНИЯ) --- */
         .timeline {
             position: relative;
             max-width: 800px;
@@ -536,7 +539,7 @@
         .timeline-panel p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
         .timeline-item:hover::after { background-color: var(--secondary); transform: scale(1.3); }
 
-        /* --- CONTACT SECTION --- */
+        /* --- КОНТАКТЫ --- */
         .contact-container {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -580,61 +583,9 @@
             font-size: 1.3rem;
         }
         .info-details h3 { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; }
-        .info-details p { font-size: 1.05rem; font-weight: 500; }
+        .info-details p, .info-details a { font-size: 1.05rem; font-weight: 500; color: var(--text-main); text-decoration: none; }
 
-        /* --- FOOTER --- */
-        footer {
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            border-top: 1px solid var(--glass-border);
-            padding: 60px 30px 30px;
-        }
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .footer-brand h2 { margin-bottom: 15px; }
-        .footer-brand p { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
-        .footer-links h3, .footer-socials h3 { font-size: 1.1rem; margin-bottom: 20px; position: relative; }
-        .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-        .footer-links a { color: var(--text-muted); text-decoration: none; transition: var(--transition-smooth); font-size: 0.95rem; }
-        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
-        .social-icons { display: flex; gap: 12px; flex-wrap: wrap; }
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-        }
-        .social-icon:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 5px 15px var(--primary-glow);
-        }
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-top: 1px solid var(--glass-border);
-            padding-top: 25px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* --- RESPONSIVE MEDIA QUERIES --- */
+        /* --- МЕДИА-ЗАПРОСЫ АДАПТИВНОСТИ --- */
         @media (max-width: 992px) {
             #home { grid-template-columns: 1fr; text-align: center; justify-items: center; padding-top: 120px; }
             .hero-text h1 { font-size: 2.8rem; }
@@ -663,482 +614,321 @@
                 transition: 0.5s ease-in-out;
             }
             .nav-menu.active { top: 0; }
-            .footer-grid { grid-template-columns: 1fr; }
             section { padding: 60px 20px; }
             .section-title { font-size: 2rem; margin-bottom: 35px; }
         }
+        
+        footer {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: var(--glass-blur);
+            border-top: 1px solid var(--glass-border);
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-muted);
+        }
+        .social-icons { display: flex; gap: 15px; justify-content: center; margin-top: 15px; }
+        .social-icon {
+            width: 40px; height: 40px; border-radius: 50%; background: var(--glass-bg);
+            border: 1px solid var(--glass-border); color: var(--text-main);
+            display: flex; justify-content: center; align-items: center; text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        .social-icon:hover { background: var(--primary); transform: translateY(-3px); }
     </style>
 </head>
 <body>
 
+    <!-- Индикатор прогресса чтения -->
     <div id="scroll-progress"></div>
 
+    <!-- Прелоадер -->
     <div id="preloader">
         <div class="loader"></div>
     </div>
 
+    <!-- Кастомный курсор -->
     <div id="custom-cursor"></div>
 
+    <!-- Анимированный задний фон -->
     <canvas id="particles-js"></canvas>
     <div class="floating-shapes">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
     </div>
 
-    <button id="back-to-top" aria-label="Back to Top"><i class="fas fa-chevron-up"></i></button>
+    <!-- Кнопка Вверх -->
+    <button id="back-to-top" aria-label="Вверх"><i class="fas fa-chevron-up"></i></button>
 
+    <!-- Шапка / Навигация -->
     <header id="header">
         <nav class="nav-container">
-            <a href="#home" class="logo">My Portfolio</a>
-            <button class="hamburger" aria-label="Toggle navigation bar">
+            <a href="#home" class="logo">Окихо</a>
+            <button class="hamburger" aria-label="Открыть меню">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link active">Главная</a></li>
+                <li><a href="#about" class="nav-link">Обо мне</a></li>
+                <li><a href="#skills" class="nav-link">Навыки</a></li>
+                <li><a href="#projects" class="nav-link">Проекты</a></li>
+                <li><a href="#hobbies" class="nav-link">Увлечения</a></li>
+                <li><a href="#achievements" class="nav-link">Достижения</a></li>
+                <li><a href="#education" class="nav-link">Обучение</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Главная секция -->
     <section id="home">
         <div class="hero-text reveal">
-            <h1>Hi, I’m <span style="color: var(--primary);">Shohruh Abdullayev</span></h1>
+            <h1>Привет, я <span style="color: var(--primary);">Окихо</span></h1>
             <h2 id="typing-text"></h2>
-            <p>I build modern, responsive and user-friendly web applications. I enjoy creating beautiful interfaces and solving real-world problems through structural, clean, production-grade logic architecture.</p>
+            <p>Пишу чистый код, создаю адаптивные сайты и мобильные приложения. Специализируюсь на программировании сложных структурных интерфейсов и реверс-инженеринге мобильных архитектур.</p>
             <div class="hero-buttons">
-                <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                <a href="#contact" class="btn btn-primary">Связаться</a>
+                <a href="#projects" class="btn btn-secondary">Мои Проекты</a>
             </div>
         </div>
         <div class="hero-image-container reveal">
             <div class="profile-img-placeholder">
-                <i class="fas fa-code"></i>
+                <i class="fas fa-terminal"></i>
             </div>
         </div>
     </section>
 
+    <!-- Обо мне -->
     <section id="about">
-        <h2 class="section-title reveal">About Me</h2>
+        <h2 class="section-title reveal">Обо мне</h2>
         <div class="about-content">
             <div class="about-text-block reveal">
-                <p>Hello! I am a passionate creator focused on creating elegant applications. With expertise in software architectures, structural user interfaces, and custom digital implementations, I bridges the gap between clean aesthetics and performance metrics.</p>
+                <p>Мне 15 лет, я студент и увлеченный разработчик из Узбекистана. Моя цель — создавать производительные программные решения и разбираться в глубинах архитектуры мобильных приложений.</p>
             </div>
             <div class="about-grid reveal">
                 <div class="glass-card about-card">
                     <i class="fas fa-user"></i>
-                    <h3>Full Name</h3>
-                    <p>Shohruh Abdullayev</p>
+                    <h3>Имя</h3>
+                    <p>Окихо</p>
                 </div>
                 <div class="glass-card about-card">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Profession</h3>
-                    <p>Software Developer</p>
+                    <i class="fas fa-code"></i>
+                    <h3>Специализация</h3>
+                    <p>Coding / Reverse Engineering</p>
                 </div>
                 <div class="glass-card about-card">
-                    <i class="fas fa-history"></i>
-                    <h3>Experience</h3>
-                    <p>3+ Years</p>
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Возраст</h3>
+                    <p>15 лет</p>
                 </div>
                 <div class="glass-card about-card">
                     <i class="fas fa-map-marker-alt"></i>
-                    <h3>Location</h3>
-                    <p>Samarkand, UZB</p>
-                </div>
-                <div class="glass-card about-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p>shohruh@example.com</p>
-                </div>
-                <div class="glass-card about-card">
-                    <i class="fas fa-language"></i>
-                    <h3>Languages</h3>
-                    <p>English, Uzbek</p>
+                    <h3>Локация</h3>
+                    <p>Ургенч, Узбекистан</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Навыки -->
     <section id="skills">
-        <h2 class="section-title reveal">My Skills</h2>
+        <h2 class="section-title reveal">Мои Навыки</h2>
         <div class="skills-grid reveal">
             <div class="glass-card skill-card">
-                <div class="skill-info"><span>HTML</span><span class="counter" data-target="95">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>CSS</span><span class="counter" data-target="90">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>JavaScript</span><span class="counter" data-target="88">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>SCSS</span><span class="counter" data-target="85">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>Bootstrap</span><span class="counter" data-target="80">0</span>%</div>
+                <div class="skill-info"><span>C++</span><span class="counter" data-target="80">0</span>%</div>
                 <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
             </div>
             <div class="glass-card skill-card">
-                <div class="skill-info"><span>Tailwind CSS</span><span class="counter" data-target="85">0</span>%</div>
+                <div class="skill-info"><span>Python</span><span class="counter" data-target="85">0</span>%</div>
                 <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
             </div>
             <div class="glass-card skill-card">
-                <div class="skill-info"><span>Git</span><span class="counter" data-target="90">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>GitHub</span><span class="counter" data-target="88">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>Figma</span><span class="counter" data-target="75">0</span>%</div>
+                <div class="skill-info"><span>Java</span><span class="counter" data-target="75">0</span>%</div>
                 <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
             </div>
             <div class="glass-card skill-card">
-                <div class="skill-info"><span>Photoshop</span><span class="counter" data-target="70">0</span>%</div>
+                <div class="skill-info"><span>JavaScript</span><span class="counter" data-target="80">0</span>%</div>
+                <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+            </div>
+            <div class="glass-card skill-card">
+                <div class="skill-info"><span>CSS3</span><span class="counter" data-target="85">0</span>%</div>
+                <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+            </div>
+            <div class="glass-card skill-card">
+                <div class="skill-info"><span>Kotlin</span><span class="counter" data-target="70">0</span>%</div>
                 <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
             </div>
             <div class="glass-card skill-card">
-                <div class="skill-info"><span>Responsive Design</span><span class="counter" data-target="95">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
+                <div class="skill-info"><span>Реверс-инженеринг APK</span><span class="counter" data-target="90">0</span>%</div>
+                <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
             </div>
             <div class="glass-card skill-card">
-                <div class="skill-info"><span>UI/UX</span><span class="counter" data-target="80">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                <div class="skill-info"><span>Модификация UI/UX</span><span class="counter" data-target="85">0</span>%</div>
+                <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
             </div>
         </div>
     </section>
 
+    <!-- Проекты -->
     <section id="projects">
-        <h2 class="section-title reveal">My Projects</h2>
+        <h2 class="section-title reveal">Мои Проекты</h2>
         <div class="projects-grid reveal">
             <div class="glass-card project-card">
-                <div class="project-img"><i class="fas fa-laptop-code"></i></div>
+                <div class="project-img"><i class="fas fa-camera-retro"></i></div>
                 <div class="project-details">
-                    <h3>E-Commerce Platform</h3>
-                    <p>A completely customized production application framework providing fast, state-driven interfaces.</p>
+                    <h3>asalfoto.uz</h3>
+                    <p>Профессиональная веб-платформа, разработанная с нуля для демонстрации и реализации медиа-услуг.</p>
                     <div class="project-tags">
-                        <span class="project-tag">HTML5</span><span class="project-tag">SCSS</span><span class="project-tag">JS</span>
+                        <span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">JavaScript</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="btn btn-primary">Demo</a>
-                        <a href="#" class="btn btn-secondary"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="glass-card project-card">
-                <div class="project-img"><i class="fas fa-chart-pie"></i></div>
-                <div class="project-details">
-                    <h3>Analytics Dashboard</h3>
-                    <p>A elegant glassmorphic dashboard tracking modern application metrics and responsive interactions.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">JS Vanilla</span><span class="project-tag">CSS3</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-primary">Demo</a>
-                        <a href="#" class="btn btn-secondary"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="glass-card project-card">
-                <div class="project-img"><i class="fas fa-mobile-alt"></i></div>
-                <div class="project-details">
-                    <h3>Task Management App</h3>
-                    <p>Mobile friendly tracking pipeline application supporting asynchronous state updates seamlessly.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Tailwind</span><span class="project-tag">HTML</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-primary">Demo</a>
-                        <a href="#" class="btn btn-secondary"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="glass-card project-card">
-                <div class="project-img"><i class="fas fa-palette"></i></div>
-                <div class="project-details">
-                    <h3>Creative Brand Engine</h3>
-                    <p>Graphic user portfolios layout showing off complete asset libraries and dark themes vectors.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Figma</span><span class="project-tag">UI/UX</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-primary">Demo</a>
-                        <a href="#" class="btn btn-secondary"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="glass-card project-card">
-                <div class="project-img"><i class="fas fa-gamepad"></i></div>
-                <div class="project-details">
-                    <h3>Canvas Engine Game</h3>
-                    <p>A retro rendering system created purely in native JavaScript running at 60 frames per second.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">HTML5 Canvas</span><span class="project-tag">JS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-primary">Demo</a>
-                        <a href="#" class="btn btn-secondary"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="glass-card project-card">
-                <div class="project-img"><i class="fas fa-network-wired"></i></div>
-                <div class="project-details">
-                    <h3>API Gateway Dashboard</h3>
-                    <p>Realtime integration tracker managing dynamic response components and modern endpoints securely.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Vanilla JS</span><span class="project-tag">CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-primary">Demo</a>
-                        <a href="#" class="btn btn-secondary"><i class="fab fa-github"></i></a>
+                        <a href="https://asalfoto.uz" target="_blank" class="btn btn-primary">Посмотреть Live</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Увлечения -->
     <section id="hobbies">
-        <h2 class="section-title reveal">Hobbies & Interests</h2>
+        <h2 class="section-title reveal">Увлечения и Интересы</h2>
         <div class="hobbies-grid reveal">
             <div class="glass-card hobby-card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Coding</h3>
-                <p>Building creative systems and testing unique algorithms.</p>
-            </div>
-            <div class="glass-card hobby-card">
-                <i class="fas fa-bezier-curve"></i>
-                <h3>Graphic Design</h3>
-                <p>Creating expressive geometric brand identities and prototypes.</p>
-            </div>
-            <div class="glass-card hobby-card">
-                <i class="fas fa-rocket"></i>
-                <h3>Tech Innovation</h3>
-                <p>Exploring evolving modern engineering systems.</p>
+                <i class="fas fa-code"></i>
+                <h3>Кодинг</h3>
+                <p>Написание логических скриптов, создание веб-сайтов и мобильного софта.</p>
             </div>
             <div class="glass-card hobby-card">
                 <i class="fas fa-gamepad"></i>
-                <h3>Gaming</h3>
-                <p>Immersing myself in competitive mechanical interactive experiences.</p>
-            </div>
-            <div class="glass-card hobby-card">
-                <i class="fas fa-book"></i>
-                <h3>Reading Books</h3>
-                <p>Acquiring knowledge on frameworks and philosophy architectures.</p>
-            </div>
-            <div class="glass-card hobby-card">
-                <i class="fas fa-plane"></i>
-                <h3>Traveling</h3>
-                <p>Discovering structural layout variations across global cultures.</p>
+                <h3>Игры</h3>
+                <p>Погружение в интерактивные миры, изучение игровых механик.</p>
             </div>
             <div class="glass-card hobby-card">
                 <i class="fas fa-music"></i>
-                <h3>Music</h3>
-                <p>Tuning into progressive rhythms for optimal code production.</p>
+                <h3>Музыка</h3>
+                <p>Прослушивание любимых треков для максимального фокуса во время работы.</p>
             </div>
             <div class="glass-card hobby-card">
-                <i class="fas fa-camera"></i>
-                <h3>Photography</h3>
-                <p>Capturing frames with balanced composition and visual hierarchy.</p>
+                <i class="fas fa-user-secret"></i>
+                <h3>Реверсинг</h3>
+                <p>Разбор структуры приложений, декомпиляция кода и глубокий анализ ПО.</p>
             </div>
         </div>
     </section>
 
+    <!-- Достижения -->
     <section id="achievements">
-        <h2 class="section-title reveal">Achievements</h2>
+        <h2 class="section-title reveal">Достижения</h2>
         <div class="timeline reveal">
             <div class="timeline-item left">
                 <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2025</div>
-                    <h3>Completed Frontend Course</h3>
-                    <h4>Advanced Certifications</h4>
-                    <p>Mastered modern responsive layout systems and performance architecture implementation models.</p>
+                    <div class="timeline-date">2024 - 2025</div>
+                    <h3>Реверс-инженеринг</h3>
+                    <h4>Анализ APK архитектуры</h4>
+                    <p>Изучил структуру внутренних файлов сборки приложений, отлично разбираюсь в изменении интерфейса (UI) и логики напрямую внутри APK.</p>
                 </div>
             </div>
             <div class="timeline-item right">
                 <div class="glass-card timeline-panel">
                     <div class="timeline-date">2025</div>
-                    <h3>Built Multiple Real Projects</h3>
-                    <h4>Production Systems</h4>
-                    <p>Shipped various high-performance applications with native JavaScript structural architecture.</p>
-                </div>
-            </div>
-            <div class="timeline-item left">
-                <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2024</div>
-                    <h3>Advanced JavaScript Core</h3>
-                    <h4>Algorithms & Logic Optimization</h4>
-                    <p>Engineered clean procedural operations optimizing micro-interaction runtimes.</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2024</div>
-                    <h3>Learned React Ecosystem</h3>
-                    <h4>Component Modeling</h4>
-                    <p>Configured single page application flows using state management lifecycles.</p>
-                </div>
-            </div>
-            <div class="timeline-item left">
-                <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2023</div>
-                    <h3>Freelance Client Delivery</h3>
-                    <h4>Global Engineering</h4>
-                    <p>Successfully managed project life cycles for complex custom visual client tasks.</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2022</div>
-                    <h3>Graphic Design Lead</h3>
-                    <h4>Vector Layout Assets</h4>
-                    <p>Curated design systems across multi-platform layouts maximizing visual recognition metrics.</p>
+                    <h3>Разработка asalfoto.uz</h3>
+                    <h4>Запуск веб-проекта</h4>
+                    <p>Спроектировал и полностью самостоятельно запустил рабочий веб-сайт.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Образование -->
     <section id="education">
-        <h2 class="section-title reveal">Education</h2>
+        <h2 class="section-title reveal">Обучение</h2>
         <div class="timeline reveal">
             <div class="timeline-item left">
                 <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2022 - 2026</div>
-                    <h3>University Degree Computer Science</h3>
-                    <h4>University Name Placeholder</h4>
-                    <p>Focused on structural paradigms, algorithms data architecture, and software optimization techniques.</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2019 - 2022</div>
-                    <h3>High School Specialized Diploma</h3>
-                    <h4>School Name Placeholder</h4>
-                    <p>Foundational logic preparation, mathematics systems, and computer hardware operations.</p>
-                </div>
-            </div>
-            <div class="timeline-item left">
-                <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2024</div>
-                    <h3>Full-Stack Bootcamps</h3>
-                    <h4>Online Platforms / Certificates</h4>
-                    <p>Intensive program analyzing database schema structure alongside web interface styling practices.</p>
+                    <div class="timeline-date">2026 - Настоящее время</div>
+                    <h3>IT Park Uzbekistan</h3>
+                    <h4>Студент направления IT</h4>
+                    <p>Углубленное изучение современных языков программирования, алгоритмических структур и командной разработки коммерческих приложений.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Контакты -->
     <section id="contact">
-        <h2 class="section-title reveal">Contact Me</h2>
+        <h2 class="section-title reveal">Контакты</h2>
         <div class="contact-container reveal">
             <div class="glass-card contact-form-wrapper">
-                <form id="portfolio-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                <form id="portfolio-form" onsubmit="event.preventDefault(); alert('Сообщение отправлено!');">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name" required autocomplete="name">
+                        <input type="text" class="form-control" placeholder="Ваше Имя" required autocomplete="name">
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-control" placeholder="Email" required autocomplete="email">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Subject" required>
+                        <textarea class="form-control" placeholder="Ваше сообщение" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <textarea class="form-control" placeholder="Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                    <button type="submit" class="btn btn-primary">Отправить <i class="fas fa-paper-plane"></i></button>
                 </form>
             </div>
             <div class="contact-info-wrapper">
                 <div class="glass-card info-item">
                     <div class="info-icon"><i class="fas fa-phone"></i></div>
                     <div class="info-details">
-                        <h3>Phone</h3>
-                        <p>+998 (99) 123-4567</p>
+                        <h3>Телефон</h3>
+                        <p><a href="tel:+998700382886">+998 (70) 038-28-86</a></p>
                     </div>
                 </div>
                 <div class="glass-card info-item">
                     <div class="info-icon"><i class="fas fa-envelope"></i></div>
                     <div class="info-details">
                         <h3>Email</h3>
-                        <p>shohruh@example.com</p>
+                        <p><a href="mailto:h9ntory1337@gmail.com">h9ntory1337@gmail.com</a></p>
                     </div>
                 </div>
                 <div class="glass-card info-item">
                     <div class="info-icon"><i class="fas fa-map-marked-alt"></i></div>
                     <div class="info-details">
-                        <h3>Address</h3>
-                        <p>Samarkand, Uzbekistan</p>
+                        <h3>Адрес</h3>
+                        <p>Ургенч, Узбекистан</p>
                     </div>
                 </div>
                 <div class="glass-card info-item">
                     <div class="info-icon"><i class="fas fa-globe"></i></div>
                     <div class="info-details">
-                        <h3>Website</h3>
-                        <p>www.shohruh.dev</p>
+                        <h3>Сайт</h3>
+                        <p><a href="https://portfolio-ocyho.netlify.app/#contact" target="_blank">portfolio-ocyho.netlify.app</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Подвал -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h2 class="logo">My Portfolio</h2>
-                <p>Creating high quality software systems. Building elegant responsive front-ends with modern architecture standards.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                </ul>
-            </div>
-            <div class="footer-socials">
-                <h3>Social Channels</h3>
-                <div class="social-icons">
-                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 Shohruh Abdullayev. All Rights Reserved. Designed with Premium Glassmorphism.
+        <p>&copy; 2026 Окихо. Все права защищены. Разработано с использованием Glassmorphism эффектов.</p>
+        <div class="social-icons">
+            <a href="https://portfolio-ocyho.netlify.app/#contact" target="_blank" class="social-icon"><i class="fas fa-globe"></i></a>
+            <a href="mailto:h9ntory1337@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
 
+    <!-- Скрипты -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            /* --- REMOVE PRELOADER --- */
+            // Удаление прелоадера
             const preloader = document.getElementById('preloader');
             window.addEventListener('load', () => {
                 preloader.style.opacity = '0';
                 preloader.style.visibility = 'hidden';
             });
-            // Fallback for preloader
             setTimeout(() => {
                 preloader.style.opacity = '0';
                 preloader.style.visibility = 'hidden';
-            }, 1000);
+            }, 800);
 
-            /* --- CUSTOM SMART CURSOR TRACKING --- */
+            // Движение кастомного курсора
             const cursor = document.getElementById('custom-cursor');
             document.addEventListener('mousemove', (e) => {
                 cursor.style.left = e.clientX + 'px';
@@ -1151,7 +941,7 @@
                 el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
             });
 
-            /* --- MOBILE NAVBAR HAMBURGER CONTROLLER --- */
+            // Мобильное бургер-меню
             const hamburger = document.querySelector('.hamburger');
             const navMenu = document.querySelector('.nav-menu');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -1170,8 +960,8 @@
                 });
             });
 
-            /* --- STYLED TYPING ANIMATION --- */
-            const strings = ["Software Developer", "Frontend Developer", "Graphic Designer"];
+            // Эффект печати текста
+            const strings = ["Code Developer", "Reverse Engineer", "IT Student"];
             let stringIdx = 0, charIdx = 0, isDeleting = false;
             const typingTarget = document.getElementById('typing-text');
 
@@ -1185,22 +975,22 @@
                     charIdx++;
                 }
 
-                let speed = isDeleting ? 50 : 120;
+                let speed = isDeleting ? 40 : 100;
 
                 if (!isDeleting && charIdx === currentString.length) {
-                    speed = 2000; // Pause at full word
+                    speed = 2000;
                     isDeleting = true;
                 } else if (isDeleting && charIdx === 0) {
                     isDeleting = false;
                     stringIdx = (stringIdx + 1) % strings.length;
-                    speed = 500; // Pause before typing next
+                    speed = 500;
                 }
 
                 setTimeout(typeEffect, speed);
             }
             typeEffect();
 
-            /* --- GLOBAL SCROLL MANAGEMENT (STICKY HEADER, SCROLL PROGRESS, ACTIVE NAV, EXTRAS) --- */
+            // Логика скролла, индикатор прогресса, активные ссылки
             const header = document.getElementById('header');
             const backToTop = document.getElementById('back-to-top');
             const progressBar = document.getElementById('scroll-progress');
@@ -1210,20 +1000,16 @@
                 let currentScroll = window.pageYOffset;
                 let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
                 
-                // Sticky Header
                 if (currentScroll > 50) header.classList.add('scrolled');
                 else header.classList.remove('scrolled');
 
-                // Back to Top Button visibility
                 if (currentScroll > 400) backToTop.classList.add('show');
                 else backToTop.classList.remove('show');
 
-                // Scroll progress calculation
                 if (totalHeight > 0) {
                     progressBar.style.width = (currentScroll / totalHeight) * 100 + '%';
                 }
 
-                // Active Menu Link Detection
                 let currentSectionId = "";
                 sections.forEach(sec => {
                     const sectionTop = sec.offsetTop - 120;
@@ -1244,7 +1030,7 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            /* --- SCROLL REVEAL ENGINE + STATS COUNTER + PROGRESS BAR ANIMATION --- */
+            // Анимация шкал навыков и счетчиков чисел
             const reveals = document.querySelectorAll('.reveal');
             
             function runOnIntersection(entries, observer) {
@@ -1252,7 +1038,6 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
                         
-                        // Handle Counters inside the entry if present
                         const counters = entry.target.querySelectorAll('.counter');
                         counters.forEach(counter => {
                             if (!counter.classList.contains('counted')) {
@@ -1273,23 +1058,20 @@
                             }
                         });
 
-                        // Handle Skill Progress Bars inside entry if present
                         const progressBars = entry.target.querySelectorAll('.skill-progress');
                         progressBars.forEach(bar => {
                             bar.style.width = bar.getAttribute('data-width');
                         });
 
-                        // Unobserve if no replay required
                         observer.unobserve(entry.target);
                     }
                 });
             }
 
-            const observerOptions = { threshold: 0.15 };
-            const revealObserver = new IntersectionObserver(runOnIntersection, observerOptions);
+            const revealObserver = new IntersectionObserver(runOnIntersection, { threshold: 0.1 });
             reveals.forEach(rev => revealObserver.observe(rev));
 
-            /* --- NATIVE VANILLA LIGHTWEIGHT PARTICLES BACKGROUND --- */
+            // Легковесные нативные фоновые частицы
             const canvas = document.getElementById('particles-js');
             const ctx = canvas.getContext('2d');
             let particlesArray = [];
@@ -1306,17 +1088,15 @@
                     this.x = Math.random() * canvas.width;
                     this.y = Math.random() * canvas.height;
                     this.size = Math.random() * 2 + 0.5;
-                    this.speedX = Math.random() * 0.4 - 0.2;
-                    this.speedY = Math.random() * 0.4 - 0.2;
+                    this.speedX = Math.random() * 0.3 - 0.15;
+                    this.speedY = Math.random() * 0.3 - 0.15;
                     this.alpha = Math.random() * 0.5 + 0.2;
                 }
                 update() {
                     this.x += this.speedX;
                     this.y += this.speedY;
-
                     if (this.x > canvas.width) this.x = 0;
                     else if (this.x < 0) this.x = canvas.width;
-                    
                     if (this.y > canvas.height) this.y = 0;
                     else if (this.y < 0) this.y = canvas.height;
                 }
@@ -1330,7 +1110,7 @@
 
             function initParticles() {
                 particlesArray = [];
-                let count = Math.min(Math.floor(window.innerWidth / 15), 80);
+                let count = Math.min(Math.floor(window.innerWidth / 20), 60);
                 for (let i = 0; i < count; i++) {
                     particlesArray.push(new Particle());
                 }
@@ -1346,7 +1126,6 @@
                 requestAnimationFrame(animateParticles);
             }
             animateParticles();
-            window.addEventListener('resize', initParticles);
         });
     </script>
 </body>
