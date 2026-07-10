@@ -1,0 +1,197 @@
+
+re
+
+
+Thought for 2s
+Thought for 2s
+Could you say a bit more about what you'd like help with? "re" came through and I want to make sure I don't miss what you meant.
+
+создай базовый хтмл и ксс код с портфолио
+
+
+Подготовил структуру HTML и CSS для портфолио
+Подготовил структуру HTML и CSS для портфолио
+Готово — базовый портфолио на HTML и CSS: адаптивная шапка с меню, hero-секция, каталог работ (4 карточки-заглушки), блок «Обо мне», навыки и контакты.
+
+Что стоит поменять под себя:
+
+Имя, роль и текст в index.html (плейсхолдеры вида «Имя Фамилия», «Название проекта»)
+Почту и ссылки на соцсети в разделе «Контакты»
+Цвета — они заданы переменными в начале style.css (--accent, --accent-warm и т.д.), поменять там — поменяется везде
+Сайт полностью адаптивный (мобильное меню-бургер уже работает) и не требует сборки — просто открыть index.html в браузере.
+
+
+Index
+Code · HTML 
+
+Style
+Code · CSS 
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+
+
+Index · HTML
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Имя Фамилия — Портфолио</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo">И.Ф.</a>
+    <nav class="nav" id="nav">
+      <a href="#work">Работы</a>
+      <a href="#about">Обо мне</a>
+      <a href="#skills">Навыки</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+ 
+<main>
+ 
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Портфолио — 2026</p>
+      <h1 class="hero-title">Имя<br>Фамилия</h1>
+      <p class="hero-role">Веб‑дизайнер и фронтенд‑разработчик</p>
+      <p class="hero-text">Делаю сайты и интерфейсы, которые понятны с первого взгляда и приятно работают на любом экране. Ниже — каталог избранных проектов.</p>
+      <a href="#work" class="btn">Смотреть работы ↓</a>
+    </div>
+  </section>
+ 
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="wrap">
+      <h2 class="section-title"><span class="section-num">01</span>Избранные работы</h2>
+ 
+      <div class="work-grid">
+ 
+        <article class="work-card">
+          <div class="work-thumb" style="--tint:#2B4570"></div>
+          <div class="work-meta">
+            <span class="work-index">01</span>
+            <h3>Название проекта</h3>
+            <p>Краткое описание задачи и результата в одно‑два предложения.</p>
+            <span class="tag">UI/UX · Веб</span>
+          </div>
+        </article>
+ 
+        <article class="work-card">
+          <div class="work-thumb" style="--tint:#C9A66B"></div>
+          <div class="work-meta">
+            <span class="work-index">02</span>
+            <h3>Название проекта</h3>
+            <p>Краткое описание задачи и результата в одно‑два предложения.</p>
+            <span class="tag">Брендинг</span>
+          </div>
+        </article>
+ 
+        <article class="work-card">
+          <div class="work-thumb" style="--tint:#5C7285"></div>
+          <div class="work-meta">
+            <span class="work-index">03</span>
+            <h3>Название проекта</h3>
+            <p>Краткое описание задачи и результата в одно‑два предложения.</p>
+            <span class="tag">Мобильное приложение</span>
+          </div>
+        </article>
+ 
+        <article class="work-card">
+          <div class="work-thumb" style="--tint:#8A6E5A"></div>
+          <div class="work-meta">
+            <span class="work-index">04</span>
+            <h3>Название проекта</h3>
+            <p>Краткое описание задачи и результата в одно‑два предложения.</p>
+            <span class="tag">Веб‑приложение</span>
+          </div>
+        </article>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-inner">
+      <h2 class="section-title"><span class="section-num">02</span>Обо мне</h2>
+      <p class="about-text">
+        Расскажите здесь о своём пути: чем занимаетесь, какой опыт у вас за плечами
+        и какие задачи вам интересно решать. Двух‑трёх абзацев достаточно —
+        посетителю важна суть, а не полная биография.
+      </p>
+      <p class="about-text">
+        Добавьте пару деталей, которые делают вас узнаваемым: подход к работе,
+        любимые инструменты или то, что отличает ваши проекты от других.
+      </p>
+    </div>
+  </section>
+ 
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="wrap">
+      <h2 class="section-title"><span class="section-num">03</span>Навыки</h2>
+      <ul class="skills-list">
+        <li>HTML / CSS</li>
+        <li>JavaScript</li>
+        <li>Figma</li>
+        <li>UI/UX‑дизайн</li>
+        <li>Адаптивная вёрстка</li>
+        <li>Прототипирование</li>
+      </ul>
+    </div>
+  </section>
+ 
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner">
+      <h2 class="section-title"><span class="section-num">04</span>Контакты</h2>
+      <p class="contact-text">Открыт(а) для новых проектов и предложений о сотрудничестве.</p>
+      <a href="mailto:mail@example.com" class="contact-email">mail@example.com</a>
+      <div class="social">
+        <a href="#">Telegram</a>
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+ 
+</main>
+ 
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Имя Фамилия. Все права защищены.</p>
+  </div>
+</footer>
+ 
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.getElementById('nav');
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  nav.querySelectorAll('a').forEach(link =>
+    link.addEventListener('click', () => nav.classList.remove('is-open'))
+  );
+</script>
+ 
+</body>
+</html>
+ 
