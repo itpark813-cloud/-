@@ -1,76 +1,78 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ocyho</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shohruh Portfolio</title>
 
-    <!-- Шрифт -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+<div id="progress"></div>
 
-    <header>
-        <h1>ocyho</h1>
-        <p class="subtitle">15 y.o. developer · web / apps / games</p>
-    </header>
+<header>
+    <div class="logo">SH</div>
 
-    <section class="about">
-        <h2>about</h2>
-        <p>
-            I'm a 15-year-old developer focused on building web interfaces, small applications and experimenting with game mechanics.
-            I work with low-level logic as well as frontend layout, constantly improving code quality and visual structure.
-        </p>
-        <p>
-            Main interest: clean design, minimalism, performance and learning by building real projects.
-        </p>
-    </section>
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <section class="skills">
-        <h2>skills</h2>
-        <div class="grid">
-            <div>html / css</div>
-            <div>c++</div>
-            <div>ui layout</div>
-            <div>game logic</div>
-            <div>minecraft dev</div>
-        </div>
-    </section>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+</header>
 
-    <section class="projects">
-        <h2>projects</h2>
+<section id="home" class="hero">
+    <h1>Hi, I'm Shohruh</h1>
+    <p id="typing"></p>
+    <div class="buttons">
+        <button>Download CV</button>
+        <button onclick="scrollToContact()">Contact</button>
+    </div>
+</section>
 
-        <div class="project">
-            <h3>calculator</h3>
-            <p>
-                Console-based calculator written in C++ using switch-case logic.
-                Focused on input handling and operation structure.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>mini sandbox</h3>
-            <p>
-                Prototype inspired by Minecraft. Basic block system, interaction logic and experimental mechanics.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>web layouts</h3>
-            <p>
-                Responsive layouts with focus on typography, spacing and minimal design.
-            </p>
-        </div>
-
-    </section>
-
-    <footer>
-        <p>© 2026 ocyho</p>
-    </footer>
-
+<section id="about">
+<h2>About</h2>
+<div class="grid">
+<div class="card">Name: Shohruh</div>
+<div class="card">Profession: Developer</div>
+<div class="card">Location: Uzbekistan</div>
 </div>
+</section>
 
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skill">HTML<div class="bar"><div data-width="90%"></div></div></div>
+<div class="skill">CSS<div class="bar"><div data-width="85%"></div></div></div>
+<div class="skill">JS<div class="bar"><div data-width="80%"></div></div></div>
+
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid">
+<div class="card">Project 1</div>
+<div class="card">Project 2</div>
+<div class="card">Project 3</div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button>Send</button>
+</div>
+</section>
+
+<footer>© 2026</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
