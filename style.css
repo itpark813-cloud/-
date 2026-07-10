@@ -2,71 +2,88 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #1e1e2f, #3a3a5a);
-    color: white;
+    background: #0a0a0a;
+    color: #eaeaea;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
 }
 
-header {
-    text-align: center;
-    padding: 50px;
-}
-
-header h1 {
-    font-size: 48px;
-}
-
-header p {
-    opacity: 0.7;
-}
-
-section {
-    padding: 40px;
+.container {
     max-width: 900px;
     margin: auto;
+    padding: 60px 20px;
+}
+
+/* HEADER */
+header {
+    margin-bottom: 80px;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    color: #777;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* SECTIONS */
+section {
+    margin-bottom: 70px;
 }
 
 h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
     margin-bottom: 20px;
-    border-bottom: 2px solid #fff;
-    display: inline-block;
 }
 
-.skills ul {
-    list-style: none;
+/* TEXT */
+p {
+    max-width: 700px;
+    margin-bottom: 15px;
+    color: #bbb;
 }
 
-.skills li {
-    background: rgba(255,255,255,0.1);
-    margin: 10px 0;
+/* SKILLS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.grid div {
+    border: 1px solid #222;
     padding: 10px;
-    border-radius: 10px;
+    font-size: 14px;
+    color: #aaa;
 }
 
-.projects {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+/* PROJECTS */
+.project {
+    border-top: 1px solid #222;
+    padding: 20px 0;
 }
 
-.card {
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 15px;
-    width: 45%;
-    transition: 0.3s;
+.project h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 500;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    background: rgba(255,255,255,0.2);
-}
-
+/* FOOTER */
 footer {
-    text-align: center;
-    padding: 20px;
-    opacity: 0.6;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    color: #555;
+    font-size: 13px;
 }
