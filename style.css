@@ -18,26 +18,27 @@
 
 html, body {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
   font-family: "Poppins", sans-serif;
   color: var(--text);
-  background: #0b111e;
+  background-color: #000000;
 }
 
 html {
-  background: #0b111e;
+  min-height: 100%;
+  background-color: #000000;
 }
 
 body {
+  min-height: 100%;
   min-height: 100svh;
+  min-height: 100dvh;
   position: relative;
-  background: #0b111e;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll;
+  background-color: #000000;
+  background-image: none;
   touch-action: pan-y;
   overscroll-behavior-y: none;
 }
@@ -48,12 +49,36 @@ body::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   background:
-    radial-gradient(circle at 18% 20%, rgba(195, 122, 255, 0.12), transparent 18%),
-    radial-gradient(circle at 78% 18%, rgba(79, 240, 255, 0.10), transparent 14%),
-    radial-gradient(circle at 50% 85%, rgba(120, 140, 210, 0.08), transparent 24%),
-    linear-gradient(180deg, #0b111e 0%, #111a2e 58%, #0b111e 100%);
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 1px),
+    radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.06), transparent 1.2px),
+    radial-gradient(circle at 40% 75%, rgba(255, 255, 255, 0.05), transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.07), transparent 1.4px),
+    linear-gradient(180deg, #000000 0%, #050505 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-attachment: fixed;
   animation: bgPulse 12s ease-in-out infinite alternate;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.5) 0 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.25) 0 1px, transparent 1px);
+  background-size: 180px 180px, 260px 260px;
+  background-position: 0 0, 40px 80px;
+  opacity: 0.22;
+  animation: drift 18s linear infinite;
 }
 
 @keyframes bgPulse {
@@ -62,8 +87,17 @@ body::before {
     filter: brightness(1);
   }
   100% {
-    transform: scale(1.03) translateY(-6px);
-    filter: brightness(1.08);
+    transform: scale(1.02) translateY(-4px);
+    filter: brightness(1.06);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0px) translateX(0px);
+  }
+  to {
+    transform: translateY(-24px) translateX(16px);
   }
 }
 
@@ -71,9 +105,10 @@ body::before {
   position: fixed;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.12;
+  opacity: 0.08;
   pointer-events: none;
   z-index: -1;
+  animation: glowFloat 10s ease-in-out infinite alternate;
 }
 
 .bg-shape-1 {
@@ -81,7 +116,7 @@ body::before {
   height: 220px;
   left: 12%;
   top: 18%;
-  background: var(--primary);
+  background: #ffffff;
 }
 
 .bg-shape-2 {
@@ -89,7 +124,7 @@ body::before {
   height: 260px;
   right: 10%;
   top: 12%;
-  background: var(--secondary);
+  background: #2d2d2d;
 }
 
 .bg-shape-3 {
@@ -98,7 +133,16 @@ body::before {
   left: 50%;
   bottom: 8%;
   transform: translateX(-50%);
-  background: #7c3aed;
+  background: #1a1a1a;
+}
+
+@keyframes glowFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-12px) scale(1.04);
+  }
 }
 
 .scroll-progress {
