@@ -5,24 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Окихо | Портфолио</title>
   <meta name="description" content="Портфолио Окихо — разработка сайтов и интерфейсов." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg-shape bg-shape-1"></div>
-  <div class="bg-shape bg-shape-2"></div>
-  <div class="bg-shape bg-shape-3"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
 
   <div class="scroll-progress" id="scrollProgress"></div>
 
   <header class="header" id="header">
     <div class="nav-container">
       <a href="#home" class="logo">Окихо</a>
-
       <button class="hamburger" id="hamburger" aria-label="Открыть меню">☰</button>
-
       <nav class="nav-menu" id="navMenu">
         <a href="#home" class="nav-link active">Главная</a>
         <a href="#about" class="nav-link">Обо мне</a>
@@ -36,11 +35,11 @@
   <main>
     <section id="home" class="section hero">
       <div class="hero-text reveal">
-        <p class="badge">Web Developer</p>
+        <p class="badge">Frontend Developer</p>
         <h1>Привет, я <span class="accent">Окихо</span></h1>
         <h2 id="typingText" class="typing"></h2>
         <p class="hero-description">
-          Делаю сайты, интерфейсы и простые проекты с чистым дизайном.
+          Создаю аккуратные, быстрые и современные сайты с фокусом на удобство, детализацию и чистый интерфейс.
         </p>
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">Мои проекты</a>
@@ -48,15 +47,15 @@
         </div>
       </div>
 
-      <div class="hero-card reveal">
-        <div class="avatar-wrap">
-          <a href="image.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="image.jpg" alt="Аватарка" class="avatar" />
-          </a>
-        </div>
-        <div class="hero-mini">
-          <h3>окихо</h3>
-          <p>Сайты • Дизайн • Разработка</p>
+      <div class="hero-panel reveal">
+        <div class="hero-panel-inner">
+          <p class="panel-label">Новый взгляд на портфолио</p>
+          <h3>Сайты, которые выглядят стильно и работают без лишнего.</h3>
+          <ul>
+            <li>Адаптивная вёрстка</li>
+            <li>Современный UI</li>
+            <li>Чистый и понятный код</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -65,8 +64,8 @@
       <h2 class="section-title reveal">Обо мне</h2>
       <div class="glass-card reveal about-card">
         <p>
-          Я делаю адаптивные сайты и собираю портфолио на реальных проектах.
-          Мне нравится чистый интерфейс, аккуратная вёрстка и простая структура.
+          Я занимаюсь разработкой сайтов и интерфейсов, делаю акцент на чистом дизайне, удобстве для пользователя и аккуратной структуре проекта.
+          Люблю работать над визуально сильными и понятными решениями, где каждая деталь имеет смысл.
         </p>
       </div>
     </section>
@@ -83,8 +82,8 @@
           <div class="bar"><span style="width: 88%"></span></div>
         </div>
         <div class="glass-card skill-card">
-          <div class="skill-top"><span>JavaScript</span><span>80%</span></div>
-          <div class="bar"><span style="width: 80%"></span></div>
+          <div class="skill-top"><span>JavaScript</span><span>82%</span></div>
+          <div class="bar"><span style="width: 82%"></span></div>
         </div>
       </div>
     </section>
@@ -93,17 +92,15 @@
       <h2 class="section-title reveal">Проекты</h2>
       <div class="projects-grid reveal">
         <article class="glass-card project-card">
-          <div class="project-icon">📷</div>
+          <div class="project-icon">🌐</div>
           <h3>asalfoto.uz</h3>
-          <p>Сайт для фото-услуг с чистым дизайном и удобной подачей информации.</p>
+          <p>Сайт для фото-услуг с современным оформлением и понятной подачей информации.</p>
           <div class="project-tags">
             <span>HTML</span>
             <span>CSS</span>
             <span>JS</span>
           </div>
-          <a href="https://asalfoto.uz" target="_blank" rel="noopener noreferrer" class="btn btn-primary small-btn">
-            Открыть
-          </a>
+          <a href="https://asalfoto.uz" target="_blank" rel="noopener noreferrer" class="btn btn-primary small-btn">Открыть</a>
         </article>
       </div>
     </section>
@@ -111,12 +108,8 @@
     <section id="contact" class="section">
       <h2 class="section-title reveal">Контакты</h2>
       <div class="contact-grid reveal">
-        <a class="glass-card contact-item" href="https://t.me/ocyho" target="_blank" rel="noopener noreferrer">
-          Telegram
-        </a>
-        <a class="glass-card contact-item" href="mailto:h9ntory1337@gmail.com">
-          Email
-        </a>
+        <a class="glass-card contact-item" href="https://t.me/ocyho" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a class="glass-card contact-item" href="mailto:h9ntory1337@gmail.com">Email</a>
       </div>
     </section>
   </main>
