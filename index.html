@@ -37,12 +37,30 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        body {
-            background: var(--bg-gradient);
-            background-attachment: fixed;
-            color: var(--text-main);
-            overflow-x: hidden;
-            position: relative;
+        html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--bg-gradient);
+    background-color: #020617;
+}
+
+html {
+    min-height: 100%;
+    background: var(--bg-gradient);
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-main);
+    overflow-x: hidden;
+    position: relative;
+}
+        main, section, footer, header {
+    background: transparent;
         }
 
         /* Кастомный скроллбар */
