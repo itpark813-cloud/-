@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Получаем новый скролл-контейнер интерфейса
     const scrollContainer = document.querySelector('.scroll-container');
 
     // Удаление прелоадера
@@ -8,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         preloader.style.opacity = '0';
         preloader.style.visibility = 'hidden';
     });
+    // Запасной таймаут (если load задержится)
     setTimeout(() => {
         preloader.style.opacity = '0';
         preloader.style.visibility = 'hidden';
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     typeEffect();
 
-    // Логика скролла, индикатор прогресса, активные ссылки
+    // Логика скролла, индикатор прогресса, подсветка активных ссылок
     const header = document.getElementById('header');
     const backToTop = document.getElementById('back-to-top');
     const progressBar = document.getElementById('scroll-progress');
@@ -114,6 +116,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     backToTop.addEventListener('click', () => {
         scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Плавный скролл по якорным ссылкам меню внутри скролл-контейнера
+    document.querySelectorAll('.nav-menu a, .hero-buttons a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    scrollContainer.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
     });
 
     // Анимация шкал навыков и счетчиков чисел
