@@ -242,15 +242,22 @@
             <h2 class="section-title reveal">Контакты</h2>
             <div class="contact-container reveal">
                 <div class="glass-card contact-form-wrapper">
-                    <form id="portfolio-form" onsubmit="event.preventDefault(); alert('Сообщение отправлено!');">
+                    <!-- Обновленная форма Web3Forms с твоим ключом и перенаправлением на новый версель-домен -->
+                    <form action="https://api.web3forms.com/submit" method="POST" id="portfolio-form">
+                        <!-- Твой персональный API ключ -->
+                        <input type="hidden" name="access_key" value="78e97d12-f428-44e6-b7a4-032e9804541a">
+                        
+                        <!-- Перенаправление пользователя обратно на сайт после успешной отправки -->
+                        <input type="hidden" name="redirect" value="https://ocyho-portfolio.vercel.app">
+
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Ваше Имя" required autocomplete="name">
+                            <input type="text" name="name" class="form-control" placeholder="Ваше Имя" required autocomplete="name">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required autocomplete="email">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required autocomplete="email">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Ваше сообщение" required></textarea>
+                            <textarea name="message" class="form-control" placeholder="Ваше сообщение" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Отправить <i class="fas fa-paper-plane"></i></button>
                     </form>
@@ -281,7 +288,7 @@
                         <div class="info-icon"><i class="fas fa-globe"></i></div>
                         <div class="info-details">
                             <h3>Сайт</h3>
-                            <p><a href="https://ocyho-portfolio.vercel.app/" target="_blank">portfolio-ocyho.netlify.app</a></p>
+                            <p><a href="https://ocyho-portfolio.vercel.app/#contact" target="_blank">ocyho-portfolio.vercel.app</a></p>
                         </div>
                     </div>
                 </div>
@@ -292,7 +299,7 @@
         <footer>
             <p>&copy; 2026 Окихо. Все права защищены. Разработано с использованием Glassmorphism эффектов.</p>
             <div class="social-icons">
-                <a href="https://ocyho-portfolio.vercel.app/" target="_blank" class="social-icon"><i class="fas fa-globe"></i></a>
+                <a href="https://ocyho-portfolio.vercel.app/#contact" target="_blank" class="social-icon"><i class="fas fa-globe"></i></a>
                 <a href="mailto:h9ntory1337@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
             </div>
         </footer>
