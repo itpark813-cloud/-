@@ -42,10 +42,8 @@
     min-height: 100%;
     margin: 0;
     overflow-x: hidden;
-    overflow-y: auto;
     background: var(--bg-gradient);
     background-color: #020617;
-    overscroll-behavior-y: none;
 }
 
 html {
@@ -55,15 +53,12 @@ html {
 
 body {
     min-height: 100svh;
-    background: var(--bg-gradient);
-    background-attachment: fixed;
     color: var(--text-main);
-    overflow-x: hidden;
     position: relative;
-}
-
-section, footer, header, canvas {
-    background: transparent !important;
+    background: var(--bg-gradient);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
 }
 
         /* Кастомный скроллбар */
