@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Окихо | Портфолио Разработчика</title>
-  <meta name="description" content="Портфолио Окихо — разработчик сайтов и приложений." />
+  <title>Окихо | Портфолио</title>
+  <meta name="description" content="Портфолио Окихо — разработка сайтов и интерфейсов." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,18 +21,13 @@
     <div class="nav-container">
       <a href="#home" class="logo">Окихо</a>
 
-      <button class="hamburger" id="hamburger" aria-label="Открыть меню">
-        ☰
-      </button>
+      <button class="hamburger" id="hamburger" aria-label="Открыть меню">☰</button>
 
       <nav class="nav-menu" id="navMenu">
         <a href="#home" class="nav-link active">Главная</a>
         <a href="#about" class="nav-link">Обо мне</a>
         <a href="#skills" class="nav-link">Навыки</a>
         <a href="#projects" class="nav-link">Проекты</a>
-        <a href="#hobbies" class="nav-link">Увлечения</a>
-        <a href="#achievements" class="nav-link">Достижения</a>
-        <a href="#education" class="nav-link">Обучение</a>
         <a href="#contact" class="nav-link">Контакты</a>
       </nav>
     </div>
@@ -41,11 +36,11 @@
   <main>
     <section id="home" class="section hero">
       <div class="hero-text reveal">
-        <p class="badge">Developer • Web • Android</p>
+        <p class="badge">Web Developer</p>
         <h1>Привет, я <span class="accent">Окихо</span></h1>
         <h2 id="typingText" class="typing"></h2>
         <p class="hero-description">
-          Пишу чистый код, делаю адаптивные сайты и создаю полезные цифровые проекты.
+          Делаю сайты, интерфейсы и простые проекты с чистым дизайном.
         </p>
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">Мои проекты</a>
@@ -55,11 +50,13 @@
 
       <div class="hero-card reveal">
         <div class="avatar-wrap">
-          <img src="image.jpg" alt="Аватарка" class="avatar" />
+          <a href="image.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="image.jpg" alt="Аватарка" class="avatar" />
+          </a>
         </div>
         <div class="hero-mini">
-          <h3>Окихо</h3>
-          <p>Создаю сайты и учусь новому каждый день.</p>
+          <h3>окихо</h3>
+          <p>Сайты • Дизайн • Разработка</p>
         </div>
       </div>
     </section>
@@ -68,8 +65,8 @@
       <h2 class="section-title reveal">Обо мне</h2>
       <div class="glass-card reveal about-card">
         <p>
-          Мне нравится делать сайты, разбираться в коде и улучшать дизайн проектов.
-          Сейчас я собираю портфолио, делаю реальные работы и развиваюсь как разработчик.
+          Я делаю адаптивные сайты и собираю портфолио на реальных проектах.
+          Мне нравится чистый интерфейс, аккуратная вёрстка и простая структура.
         </p>
       </div>
     </section>
@@ -89,10 +86,6 @@
           <div class="skill-top"><span>JavaScript</span><span>80%</span></div>
           <div class="bar"><span style="width: 80%"></span></div>
         </div>
-        <div class="glass-card skill-card">
-          <div class="skill-top"><span>Kotlin</span><span>70%</span></div>
-          <div class="bar"><span style="width: 70%"></span></div>
-        </div>
       </div>
     </section>
 
@@ -102,7 +95,7 @@
         <article class="glass-card project-card">
           <div class="project-icon">📷</div>
           <h3>asalfoto.uz</h3>
-          <p>Сайт для фото-услуг с чистым дизайном и удобной подачей контента.</p>
+          <p>Сайт для фото-услуг с чистым дизайном и удобной подачей информации.</p>
           <div class="project-tags">
             <span>HTML</span>
             <span>CSS</span>
@@ -112,50 +105,6 @@
             Открыть
           </a>
         </article>
-      </div>
-    </section>
-
-    <section id="hobbies" class="section">
-      <h2 class="section-title reveal">Увлечения</h2>
-      <div class="hobbies-grid reveal">
-        <div class="glass-card hobby-card">
-          <h3>Кодинг</h3>
-          <p>Создание сайтов и приложений.</p>
-        </div>
-        <div class="glass-card hobby-card">
-          <h3>Дизайн</h3>
-          <p>Красивые и удобные интерфейсы.</p>
-        </div>
-        <div class="glass-card hobby-card">
-          <h3>Технологии</h3>
-          <p>Изучение новых инструментов.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="achievements" class="section">
-      <h2 class="section-title reveal">Достижения</h2>
-      <div class="timeline reveal">
-        <div class="glass-card timeline-item">
-          <div class="timeline-date">2025</div>
-          <h3>Разработка asalfoto.uz</h3>
-          <p>Запустил первый рабочий сайт для реального проекта.</p>
-        </div>
-        <div class="glass-card timeline-item">
-          <div class="timeline-date">2026</div>
-          <h3>Сбор портфолио</h3>
-          <p>Собираю новые работы и улучшаю качество проектов.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="section">
-      <h2 class="section-title reveal">Обучение</h2>
-      <div class="glass-card reveal education-card">
-        <p>
-          Изучаю веб-разработку, дизайн интерфейсов и основы программирования.
-          Постепенно перехожу от простых страниц к более серьёзным проектам.
-        </p>
       </div>
     </section>
 
