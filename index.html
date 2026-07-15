@@ -2,279 +2,304 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Окихо | Портфолио Разработчика</title>
-    <meta name="description" content="Портфолио Окихо — Software Developer, программист и специалист по реверс-инженерингу.">
     
+    <!-- Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Подключение внешних стилей -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Индикатор прогресса чтения -->
     <div id="scroll-progress"></div>
 
+    <!-- Прелоадер -->
     <div id="preloader">
         <div class="loader"></div>
     </div>
 
+    <!-- Кастомный курсор -->
     <div id="custom-cursor"></div>
 
-    <canvas id="particles-js"></canvas>
-    <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
+    <!-- Анимированный задний фон (Абсолютно фиксированный на одном месте) -->
+    <div class="fixed-background">
+        <canvas id="particles-js"></canvas>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
     </div>
 
+    <!-- Кнопка Вверх -->
     <button id="back-to-top" aria-label="Вверх"><i class="fas fa-chevron-up"></i></button>
 
-    <header id="header">
-        <nav class="nav-container">
-            <a href="#home" class="logo">Окихо</a>
-            <button class="hamburger" aria-label="Открыть меню">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Главная</a></li>
-                <li><a href="#about" class="nav-link">Обо мне</a></li>
-                <li><a href="#skills" class="nav-link">Навыки</a></li>
-                <li><a href="#projects" class="nav-link">Проекты</a></li>
-                <li><a href="#hobbies" class="nav-link">Увлечения</a></li>
-                <li><a href="#achievements" class="nav-link">Достижения</a></li>
-                <li><a href="#education" class="nav-link">Обучение</a></li>
-                <li><a href="#contact" class="nav-link">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Скролл-контейнер для интерфейса (Листается только он!) -->
+    <div class="scroll-container">
 
-    <section id="home">
-        <div class="hero-text reveal">
-            <h1>Привет, я <span style="color: var(--primary);">Окихо</span></h1>
-            <h2 id="typing-text"></h2>
-            <p>Пишу чистый код, создаю адаптивные сайты и мобильные приложения. Специализируюсь на программировании сложных структурных интерфейсов и реверс-инженеринге мобильных архитектур.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Связаться</a>
-                <a href="#projects" class="btn btn-secondary">Мои Проекты</a>
-            </div>
-        </div>
-        <div class="hero-image-container reveal">
-            <div class="profile-img-placeholder">
-                <i class="fas fa-terminal"></i>
-            </div>
-        </div>
-    </section>
+        <!-- Шапка / Навигация -->
+        <header id="header">
+            <nav class="nav-container">
+                <a href="#home" class="logo">Окихо</a>
+                <button class="hamburger" aria-label="Открыть меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Главная</a></li>
+                    <li><a href="#about" class="nav-link">Обо мне</a></li>
+                    <li><a href="#skills" class="nav-link">Навыки</a></li>
+                    <li><a href="#projects" class="nav-link">Проекты</a></li>
+                    <li><a href="#hobbies" class="nav-link">Увлечения</a></li>
+                    <li><a href="#achievements" class="nav-link">Достижения</a></li>
+                    <li><a href="#education" class="nav-link">Обучение</a></li>
+                    <li><a href="#contact" class="nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <section id="about">
-        <h2 class="section-title reveal">Обо мне</h2>
-        <div class="about-content">
-            <div class="about-text-block reveal">
-                <p>Мне 15 лет, я студент и увлеченный разработчик из Узбекистана. Моя цель — создавать производительные программные решения и разбираться в глубинах архитектуры мобильных приложений.</p>
-            </div>
-            <div class="about-grid reveal">
-                <div class="glass-card about-card">
-                    <i class="fas fa-user"></i>
-                    <h3>Имя</h3>
-                    <p>Окихо</p>
-                </div>
-                <div class="glass-card about-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Специализация</h3>
-                    <p>Coding / Reverse Engineering</p>
-                </div>
-                <div class="glass-card about-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Возраст</h3>
-                    <p>15 лет</p>
-                </div>
-                <div class="glass-card about-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Локация</h3>
-                    <p>Ургенч, Узбекистан</p>
+        <!-- Главная секция -->
+        <section id="home">
+            <div class="hero-text reveal">
+                <h1>Привет, я <span style="color: var(--primary);">Окихо</span></h1>
+                <h2 id="typing-text"></h2>
+                <p>Пишу чистый код, создаю адаптивные сайты и мобильные приложения. Специализируюсь на программировании сложных структурных интерфейсов и реверс-инженеринге мобильных архитектур.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Связаться</a>
+                    <a href="#projects" class="btn btn-secondary">Мои Проекты</a>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="hero-image-container reveal">
+                <div class="profile-img-placeholder">
+                    <i class="fas fa-terminal"></i>
+                </div>
+            </div>
+        </section>
 
-    <section id="skills">
-        <h2 class="section-title reveal">Мои Навыки</h2>
-        <div class="skills-grid reveal">
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>C++</span><span class="counter" data-target="80">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>Python</span><span class="counter" data-target="85">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>Java</span><span class="counter" data-target="75">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>JavaScript</span><span class="counter" data-target="80">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>CSS3</span><span class="counter" data-target="85">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>Kotlin</span><span class="counter" data-target="70">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>Реверс-инженеринг APK</span><span class="counter" data-target="90">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
-            </div>
-            <div class="glass-card skill-card">
-                <div class="skill-info"><span>Модификация UI/UX</span><span class="counter" data-target="85">0</span>%</div>
-                <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title reveal">Мои Проекты</h2>
-        <div class="projects-grid reveal">
-            <div class="glass-card project-card">
-                <div class="project-img"><i class="fas fa-camera-retro"></i></div>
-                <div class="project-details">
-                    <h3>asalfoto.uz</h3>
-                    <p>Профессиональная веб-платформа, разработанная с нуля для демонстрации и реализации медиа-услуг.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">JavaScript</span>
+        <!-- Обо мне -->
+        <section id="about">
+            <h2 class="section-title reveal">Обо мне</h2>
+            <div class="about-content">
+                <div class="about-text-block reveal">
+                    <p>Мне 15 лет, я студент и увлеченный разработчик из Узбекистана. Моя цель — создавать производительные программные решения и разбираться в глубинах архитектуры мобильных приложений.</p>
+                </div>
+                <div class="about-grid reveal">
+                    <div class="glass-card about-card">
+                        <i class="fas fa-user"></i>
+                        <h3>Имя</h3>
+                        <p>Окихо</p>
                     </div>
-                    <div class="project-links">
-                        <a href="https://asalfoto.uz" target="_blank" class="btn btn-primary">Посмотреть Live</a>
+                    <div class="glass-card about-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Специализация</h3>
+                        <p>Coding / Reverse Engineering</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="hobbies">
-        <h2 class="section-title reveal">Увлечения и Интересы</h2>
-        <div class="hobbies-grid reveal">
-            <div class="glass-card hobby-card">
-                <i class="fas fa-code"></i>
-                <h3>Кодинг</h3>
-                <p>Написание логических скриптов, создание веб-сайтов и мобильного софта.</p>
-            </div>
-            <div class="glass-card hobby-card">
-                <i class="fas fa-gamepad"></i>
-                <h3>Игры</h3>
-                <p>Погружение в интерактивные миры, изучение игровых механик.</p>
-            </div>
-            <div class="glass-card hobby-card">
-                <i class="fas fa-music"></i>
-                <h3>Музыка</h3>
-                <p>Прослушивание любимых треков для максимального фокуса во время работы.</p>
-            </div>
-            <div class="glass-card hobby-card">
-                <i class="fas fa-user-secret"></i>
-                <h3>Реверсинг</h3>
-                <p>Разбор структуры приложений, декомпиляция кода и глубокий анализ ПО.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="achievements">
-        <h2 class="section-title reveal">Достижения</h2>
-        <div class="timeline reveal">
-            <div class="timeline-item left">
-                <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2024 - 2025</div>
-                    <h3>Реверс-инженеринг</h3>
-                    <h4>Анализ APK архитектуры</h4>
-                    <p>Изучил структуру внутренних файлов сборки приложений, отлично разбираюсь в изменении интерфейса (UI) и логики напрямую внутри APK.</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2025</div>
-                    <h3>Разработка asalfoto.uz</h3>
-                    <h4>Запуск веб-проекта</h4>
-                    <p>Спроектировал и полностью самостоятельно запустил рабочий веб-сайт.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2 class="section-title reveal">Обучение</h2>
-        <div class="timeline reveal">
-            <div class="timeline-item left">
-                <div class="glass-card timeline-panel">
-                    <div class="timeline-date">2026 - Настоящее время</div>
-                    <h3>IT Park Uzbekistan</h3>
-                    <h4>Студент направления IT</h4>
-                    <p>Углубленное изучение современных языков программирования, алгоритмических структур и командной разработки коммерческих приложений.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title reveal">Контакты</h2>
-        <div class="contact-container reveal">
-            <div class="glass-card contact-form-wrapper">
-                <form id="portfolio-form" onsubmit="event.preventDefault(); alert('Сообщение отправлено!');">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Ваше Имя" required autocomplete="name">
+                    <div class="glass-card about-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Возраст</h3>
+                        <p>15 лет</p>
                     </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email" required autocomplete="email">
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" placeholder="Ваше сообщение" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Отправить <i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
-            <div class="contact-info-wrapper">
-                <div class="glass-card info-item">
-                    <div class="info-icon"><i class="fas fa-phone"></i></div>
-                    <div class="info-details">
-                        <h3>Телефон</h3>
-                        <p><a href="tel:+998700382886">+998 (70) 038-28-86</a></p>
-                    </div>
-                </div>
-                <div class="glass-card info-item">
-                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="info-details">
-                        <h3>Email</h3>
-                        <p><a href="mailto:h9ntory1337@gmail.com">h9ntory1337@gmail.com</a></p>
-                    </div>
-                </div>
-                <div class="glass-card info-item">
-                    <div class="info-icon"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="info-details">
-                        <h3>Адрес</h3>
+                    <div class="glass-card about-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Локация</h3>
                         <p>Ургенч, Узбекистан</p>
                     </div>
                 </div>
-                <div class="glass-card info-item">
-                    <div class="info-icon"><i class="fas fa-globe"></i></div>
-                    <div class="info-details">
-                        <h3>Сайт</h3>
-                        <p><a href="https://portfolio-ocyho.netlify.app/#contact" target="_blank">portfolio-ocyho.netlify.app</a></p>
+            </div>
+        </section>
+
+        <!-- Навыки -->
+        <section id="skills">
+            <h2 class="section-title reveal">Мои Навыки</h2>
+            <div class="skills-grid reveal">
+                <div class="glass-card skill-card">
+                    <div class="skill-info"><span>C++</span><span class="counter" data-target="80">0</span>%</div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-info"><span>Python</span><span class="counter" data-target="85">0</span>%</div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-info"><span>Java</span><span class="counter" data-target="75">0</span>%</div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-info"><span>JavaScript</span><span class="counter" data-target="80">0</span>%</div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-info"><span>CSS3</span><span class="counter" data-target="85">0</span>%</div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-info"><span>Kotlin</span><span class="counter" data-target="70">0</span>%</div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-info"><span>Реверс-инженеринг APK</span><span class="counter" data-target="90">0</span>%</div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-info"><span>Модификация UI/UX</span><span class="counter" data-target="85">0</span>%</div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Проекты -->
+        <section id="projects">
+            <h2 class="section-title reveal">Мои Проекты</h2>
+            <div class="projects-grid reveal">
+                <div class="glass-card project-card">
+                    <div class="project-img"><i class="fas fa-camera-retro"></i></div>
+                    <div class="project-details">
+                        <h3>asalfoto.uz</h3>
+                        <p>Профессиональная веб-платформа, разработанная с нуля для демонстрации и реализации медиа-услуг.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://asalfoto.uz" target="_blank" class="btn btn-primary">Посмотреть Live</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>&copy; 2026 Окихо. Все права защищены. Разработано с использованием Glassmorphism эффектов.</p>
-        <div class="social-icons">
-            <a href="https://portfolio-ocyho.netlify.app/#contact" target="_blank" class="social-icon"><i class="fas fa-globe"></i></a>
-            <a href="mailto:h9ntory1337@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-        </div>
-    </footer>
+        <!-- Увлечения -->
+        <section id="hobbies">
+            <h2 class="section-title reveal">Увлечения и Интересы</h2>
+            <div class="hobbies-grid reveal">
+                <div class="glass-card hobby-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Кодинг</h3>
+                    <p>Написание логических скриптов, создание веб-сайтов и мобильного софта.</p>
+                </div>
+                <div class="glass-card hobby-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Игры</h3>
+                    <p>Погружение в интерактивные миры, изучение игровых механик.</p>
+                </div>
+                <div class="glass-card hobby-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Музыка</h3>
+                    <p>Прослушивание любимых треков для максимального фокуса во время работы.</p>
+                </div>
+                <div class="glass-card hobby-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>Реверсинг</h3>
+                    <p>Разбор структуры приложений, декомпиляция кода и глубокий анализ ПО.</p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Достижения -->
+        <section id="achievements">
+            <h2 class="section-title reveal">Достижения</h2>
+            <div class="timeline reveal">
+                <div class="timeline-item left">
+                    <div class="glass-card timeline-panel">
+                        <div class="timeline-date">2024 - 2025</div>
+                        <h3>Реверс-инженеринг</h3>
+                        <h4>Анализ APK архитектуры</h4>
+                        <p>Изучил структуру внутренних файлов сборки приложений, отлично разбираюсь в изменении интерфейса (UI) и логики напрямую внутри APK.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="glass-card timeline-panel">
+                        <div class="timeline-date">2025</div>
+                        <h3>Разработка asalfoto.uz</h3>
+                        <h4>Запуск веб-проекта</h4>
+                        <p>Спроектировал и полностью самостоятельно запустил рабочий веб-сайт.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Образование -->
+        <section id="education">
+            <h2 class="section-title reveal">Обучение</h2>
+            <div class="timeline reveal">
+                <div class="timeline-item left">
+                    <div class="glass-card timeline-panel">
+                        <div class="timeline-date">2026 - Настоящее время</div>
+                        <h3>IT Park Uzbekistan</h3>
+                        <h4>Студент направления IT</h4>
+                        <p>Углубленное изучение современных языков программирования, алгоритмических структур и командной разработки коммерческих приложений.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section id="contact">
+            <h2 class="section-title reveal">Контакты</h2>
+            <div class="contact-container reveal">
+                <div class="glass-card contact-form-wrapper">
+                    <form id="portfolio-form" onsubmit="event.preventDefault(); alert('Сообщение отправлено!');">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ваше Имя" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Ваше сообщение" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+                <div class="contact-info-wrapper">
+                    <div class="glass-card info-item">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <div class="info-details">
+                            <h3>Телефон</h3>
+                            <p><a href="tel:+998700382886">+998 (70) 038-28-86</a></p>
+                        </div>
+                    </div>
+                    <div class="glass-card info-item">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:h9ntory1337@gmail.com">h9ntory1337@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="glass-card info-item">
+                        <div class="info-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <div class="info-details">
+                            <h3>Адрес</h3>
+                            <p>Ургенч, Узбекистан</p>
+                        </div>
+                    </div>
+                    <div class="glass-card info-item">
+                        <div class="info-icon"><i class="fas fa-globe"></i></div>
+                        <div class="info-details">
+                            <h3>Сайт</h3>
+                            <p><a href="https://portfolio-ocyho.netlify.app/#contact" target="_blank">portfolio-ocyho.netlify.app</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Подвал -->
+        <footer>
+            <p>&copy; 2026 Окихо. Все права защищены. Разработано с использованием Glassmorphism эффектов.</p>
+            <div class="social-icons">
+                <a href="https://portfolio-ocyho.netlify.app/#contact" target="_blank" class="social-icon"><i class="fas fa-globe"></i></a>
+                <a href="mailto:h9ntory1337@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+        </footer>
+
+    </div> <!-- Конец scroll-container -->
+
+    <!-- Подключение внешней логики JS -->
     <script src="script.js"></script>
 </body>
 </html>
