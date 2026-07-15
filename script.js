@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    const scrollContainer = document.querySelector('.scroll-container');
+
     // Удаление прелоадера
     const preloader = document.getElementById('preloader');
     window.addEventListener('load', () => {
@@ -79,9 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.getElementById('scroll-progress');
     const sections = document.querySelectorAll('section');
 
-    window.addEventListener('scroll', () => {
-        let currentScroll = window.pageYOffset;
-        let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    // Наблюдаем за прокруткой нового контейнера-интерфейса
+    scrollContainer.addEventListener('scroll', () => {
+        let currentScroll = scrollContainer.scrollTop;
+        let totalHeight = scrollContainer.scrollHeight - scrollContainer.clientHeight;
         
         if (currentScroll > 50) header.classList.add('scrolled');
         else header.classList.remove('scrolled');
@@ -110,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     // Анимация шкал навыков и счетчиков чисел
@@ -151,7 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const revealObserver = new IntersectionObserver(runOnIntersection, { threshold: 0.1 });
+    // Для корректной работы IntersectionObserver на мобильных скроллим контейнер
+    const revealObserver = new IntersectionObserver(runOnIntersection, { 
+        root: scrollContainer,
+        threshold: 0.1 
+    });
     reveals.forEach(rev => revealObserver.observe(rev));
 
     // Легковесные нативные фоновые частицы
