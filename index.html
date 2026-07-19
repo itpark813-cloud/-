@@ -130,6 +130,7 @@
                     <div class="skill-bar"><div class="skill-progress" data-width="20%"></div></div>
                 </div>
                 <div class="glass-card skill-card">
+                    <div class="glass-card skill-card">
                     <div class="skill-info"><span>Реверс-инженеринг APK</span><span class="counter" data-target="90">0</span>%</div>
                     <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
                 </div>
@@ -237,7 +238,7 @@
                             <input type="email" name="email" class="form-control" placeholder="Email" required autocomplete="email">
                         </div>
                         <div class="form-group">
-                            <textarea name="message" class="form-control" placeholder="Ваше сообщение" required></textarea>
+                            <input type="textarea" name="message" class="form-control" placeholder="Ваше сообщение" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" id="submit-btn">Отправить <i class="fas fa-paper-plane"></i></button>
                         
@@ -285,72 +286,9 @@
             </div>
         </footer>
 
-    </div> <script src="script.js"></script>
+    </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const contactForm = document.getElementById('portfolio-form');
-        const formResult = document.getElementById('form-result');
-        const submitBtn = document.getElementById('submit-btn');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault(); // Останавливаем уход с сайта на страницу web3forms
-
-                // Показываем статус отправки
-                formResult.style.color = "rgba(255, 255, 255, 0.7)";
-                formResult.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Отправка сообщения...';
-                submitBtn.disabled = true;
-
-                // Собираем поля
-                const formData = new FormData(contactForm);
-                const object = Object.fromEntries(formData);
-                const json = JSON.stringify(object);
-
-                // API запрос
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: json
-                })
-                .then(async (response) => {
-                    let jsonResp = await response.json();
-                    if (response.status == 200) {
-                        // Успех
-                        formResult.style.color = "#4ade80"; // Красивый зеленый
-                        formResult.innerHTML = '<i class="fas fa-check-circle" style="margin-right: 8px;"></i>Сообщение успешно доставлено!';
-                        contactForm.reset(); // Очищаем поля формы
-                    } else {
-                        // Ошибка от API
-                        console.log(response);
-                        formResult.style.color = "#f87171"; // Нежно-красный
-                        formResult.innerHTML = `<i class="fas fa-exclamation-circle" style="margin-right: 8px;"></i>Ошибка: ${jsonResp.message}`;
-                    }
-                })
-                .catch(error => {
-                    // Ошибка сети
-                    console.log(error);
-                    formResult.style.color = "#f87171";
-                    formResult.innerHTML = '<i class="fas fa-exclamation-circle" style="margin-right: 8px;"></i>Не удалось отправить. Проверьте сеть.';
-                })
-                .then(() => {
-                    // В любом случае включаем кнопку обратно через секунду
-                    submitBtn.disabled = false;
-                    // Очищаем статус успеха через 6 секунд
-                    setTimeout(() => {
-                        formResult.style.opacity = "0";
-                        setTimeout(() => {
-                            formResult.innerHTML = "";
-                            formResult.style.opacity = "1";
-                        }, 400);
-                    }, 6000);
-                });
-            });
-        }
-    });
-    </script>
+    <!-- Подключаем как модуль, чтобы работали ES-импорты Firebase -->
+    <script type="module" src="script.js"></script>
 </body>
 </html>
