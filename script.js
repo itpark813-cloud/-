@@ -3,8 +3,8 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCfl6mlMqYllPkX5NAkTFiBEmvhUsK6gro",
   authDomain: "ocyho1.firebaseapp.com",
@@ -18,7 +18,73 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // === ЛОГИКА ОТПРАВКИ ФОРМЫ (ПЕРЕНЕСЕНА ИЗ HTML) ===
+    const contactForm = document.getElementById('portfolio-form');
+    const formResult = document.getElementById('form-result');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Останавливаем уход с сайта на страницу web3forms
+
+            // Показываем статус отправки
+            formResult.style.color = "rgba(255, 255, 255, 0.7)";
+            formResult.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>Отправка сообщения...';
+            submitBtn.disabled = true;
+
+            // Собираем поля
+            const formData = new FormData(contactForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            // API запрос
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let jsonResp = await response.json();
+                if (response.status == 200) {
+                    // Успех
+                    formResult.style.color = "#4ade80"; // Красивый зеленый
+                    formResult.innerHTML = '<i class="fas fa-check-circle" style="margin-right: 8px;"></i>Сообщение успешно доставлено!';
+                    contactForm.reset(); // Очищаем поля формы
+                } else {
+                    // Ошибка от API
+                    console.log(response);
+                    formResult.style.color = "#f87171"; // Нежно-красный
+                    formResult.innerHTML = `<i class="fas fa-exclamation-circle" style="margin-right: 8px;"></i>Ошибка: ${jsonResp.message}`;
+                }
+            })
+            .catch(error => {
+                // Ошибка сети
+                console.log(error);
+                formResult.style.color = "#f87171";
+                formResult.innerHTML = '<i class="fas fa-exclamation-circle" style="margin-right: 8px;"></i>Не удалось отправить. Проверьте сеть.';
+            })
+            .then(() => {
+                // В любом случае включаем кнопку обратно через секунду
+                submitBtn.disabled = false;
+                // Очищаем статус успеха через 6 секунд
+                setTimeout(() => {
+                    formResult.style.opacity = "0";
+                    setTimeout(() => {
+                        formResult.innerHTML = "";
+                        formResult.style.opacity = "1";
+                    }, 400);
+                }, 6000);
+            });
+        });
+    }
+
+    // === ИНТЕРФЕЙСНАЯ ЛОГИКА САЙТА ===
     
     // Получаем новый скролл-контейнер интерфейса
     const scrollContainer = document.querySelector('.scroll-container');
