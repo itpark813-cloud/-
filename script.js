@@ -1,10 +1,8 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// Импортируем Firebase напрямую через CDN для браузера
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 
-// Your web app's Firebase configuration
+// Ваша конфигурация остается прежней
 const firebaseConfig = {
   apiKey: "AIzaSyCfl6mlMqYllPkX5NAkTFiBEmvhUsK6gro",
   authDomain: "ocyho1.firebaseapp.com",
@@ -15,12 +13,12 @@ const firebaseConfig = {
   measurementId: "G-GJGL1K0WQD"
 };
 
-// Initialize Firebase
+// Инициализация Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+    // ... Весь остальной ваш код интерфейса и формы остается без изменений ...
     // === ЛОГИКА ОТПРАВКИ ФОРМЫ (ПЕРЕНЕСЕНА ИЗ HTML) ===
     const contactForm = document.getElementById('portfolio-form');
     const formResult = document.getElementById('form-result');
